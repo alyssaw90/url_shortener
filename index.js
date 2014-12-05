@@ -30,20 +30,21 @@ app.get("/", function(req, res){
 
 
 app.post("/create", function(req,res){
+	
 	models.Link.findOrCreate({where:{"url": req.body.fullurl}}).done(function(err, data, created){
 		// res.send(data);
 		var dataId = data.id;
 		var shortResults = hashids.encode(dataId);
 		if(created){
-		data.short = shortResults;
-		data.save().done(function(err, data2){
-			console.log(data2);
-			res.render("create", data2);
-		});
-	}else {
-		console.log("Already has a hash!")
-		res.render("create", {"short": data.short})
-	}
+			data.short = shortResults;
+			
+			data.save().done(function(err, data2){
+				res.render("create", {short: data2.short});
+			});
+		}else {
+			console.log("Already has a hash!")
+			res.render("create", {"short": data.short})
+		}
 	})
 	// res.redirect("/create");
 });
