@@ -28,6 +28,7 @@ app.get("/", function(req, res){
 // });
 
 
+
 app.post("/create", function(req,res){
 	models.Link.findOrCreate({where:{"url": req.body.fullurl}}).done(function(err, data, created){
 		// res.send(data);
@@ -58,7 +59,4 @@ app.get("/:id", function(req, res){
 
 });
 
-
-app.listen(3000, function(){
-	console.log("Ready to go on 3000!");
-})
+app.listen(process.env.PORT || 3000)
