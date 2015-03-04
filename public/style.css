@@ -2,18 +2,34 @@ body {
   background-color: #8c9899;
 }
 a {
-  color: #ffffff;
+  color: #fff;
+}
+.title {
+  color: #fff;
+  font-size: 100px;
 }
 .jumbotron {
   background-color: #1abc9c;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
 }
 .btn {
   background-color: #1abc9c;
   border-color: #1abc9c;
-  color: #ffffff;
+  color: #fff;
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
 }
 .btn:hover {
   background-color: #1abc9c;
   opacity: 0.8;
-  color: #ffffff;
+  color: #fff;
+}
+.create-title {
+  color: #fff;
+  font-family: 'Amatic SC', cursive;
+  font-size: 75px;
+}
+.create-url {
+  font-family: 'Amatic SC', cursive;
 }
